@@ -1,0 +1,1 @@
+This file is a two line file describing the absolute path name of the current working directory
