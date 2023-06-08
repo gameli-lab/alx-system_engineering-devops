@@ -1,2 +1,2 @@
 #!/bin/bash \n
-mkdir /tmp/my_first_directory/ \n
+mkdir /tmp/my_first_directory/betty \n
