@@ -1,0 +1,2 @@
+#!/bin/bash \n
+echo "File_type is"  /tmp/iamafile -b \n
