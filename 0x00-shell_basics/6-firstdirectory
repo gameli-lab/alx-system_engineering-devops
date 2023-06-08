@@ -1,2 +1,2 @@
-#!/bin/bash \n
-mkdir -p /tmp/my_first_directory/betty \n
+#!/bin/bash
+mkdir -p /tmp/my_first_directory/
