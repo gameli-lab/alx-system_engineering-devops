@@ -1,2 +1,2 @@
 #!/bin/bash
-echo "ASCII" | tr a-zA-Z n-za-mN-ZA-M
+echo  | tr a-zA-Z n-za-mN-ZA-M
