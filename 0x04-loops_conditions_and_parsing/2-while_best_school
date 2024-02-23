@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+#This script echoes best school
 
 i=0
 while [ $i -le 10 ]

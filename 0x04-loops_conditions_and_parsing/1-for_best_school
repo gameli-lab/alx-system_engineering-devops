@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+#This script echoes best school ten times
 
 for ((i = 0; i < 10; i++))
 do 

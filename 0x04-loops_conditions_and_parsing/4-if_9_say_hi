@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+##This script echoes best school and hi
+
 i=0
 while [ $i -le 9 ]
 do
