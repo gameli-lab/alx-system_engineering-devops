@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-
 #This is a shell script that that displays to infinity and beyond indefinitely
 
 sig()
