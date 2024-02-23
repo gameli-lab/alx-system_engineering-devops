@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+#This is a shell script that prints the PID of running processes
+
+ps -u
