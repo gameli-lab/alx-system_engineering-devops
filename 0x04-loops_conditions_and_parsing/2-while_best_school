@@ -2,7 +2,7 @@
 #This script echoes best school
 
 i=0
-while [ $i -le 10 ]
+while [ $i -le 9 ]
 do
 	echo "Best School"; ((i++))
 done
