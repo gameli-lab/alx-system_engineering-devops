@@ -2,4 +2,16 @@
 #This is a shell script that that displays the PID, along with the process
 # name, of processes whose name contain the word bash.
 
-pidof -x bash | tr '\n' ' '
+script_pid=$$
+
+process_list=$(ls -d /proc/[0-9]*)
+
+for process_path in $process_list; do
+    pid=$(basename $process_path)
+
+    if [ -f $process_path/cmdline ] && grep -q "bash" $process_path/cmdline; then
+        process_name=$(tr '\0' ' ' < $process_path/cmdline)
+
+        echo "$pid $process_name"
+    fi
+done
