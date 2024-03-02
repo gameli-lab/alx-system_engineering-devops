@@ -1,4 +1,5 @@
-#Ruby regexp file
+#!/usr/bin/env ruby
+#Ruby regex 
 
 input = ARGV[0]
 
