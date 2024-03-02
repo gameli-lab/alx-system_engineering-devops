@@ -1,12 +1,2 @@
 #!/usr/bin/env ruby
-#Ruby regex 
-
-input = ARGV[0]
-
-pattern = /School/
-
-matches = input.scan(pattern)
-
-matches.each do
-  puts "School"
-end
+puts ARGV[0].scan(/School/).join
