@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# prints the ipv4 addresses on the machine
+
+ip -4 add show | awk '/inet /{print($2)}'
