@@ -11,6 +11,6 @@ echo 'Hello World!' > index.html
 
 cp index.html /var/www/html
 
-systemctl start nginx
+service nginx restart
 
 exit
