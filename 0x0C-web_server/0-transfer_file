@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+# Transfering file to my remote sever
+
+if [ "$#" -ne 4 ]; then
+	echo "Usage:  $(basename "$0") PATH_TO_PATH IP USERNAME PATH_TO_SSH_KEY"
+exit 1
+fi
+FILE_PATH="$1"
+IP="$2"
+USERNAME="$3"
+SSH="$4"
+
+scp -o StrictHostKeyChecking=no -i "$SSH" "$FILE_PATH" "$USERNAME@$IP":~
