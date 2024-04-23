@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# Creating a new page on my server
+
+echo 'Hello Holberton' > index.html
+
+docker cp index.html gameli-apache-container:/usr/local/apache2/htdocs/index.html
