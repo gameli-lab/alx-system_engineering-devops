@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
-# Installing nginx on my server
+# Add the redirection configuration to nginx.conf
 
-sed -i '/\/redirect_me {/a \    return 301 https:\/\/www.jw.org;' /etc/nginx/nginx.conf
+sed -i '/server {/a\'$'\n''#            \location /redirect_me { return 301 https://jw.org; }'$'\n' /etc/nginx/nginx.conf
 
 service nginx restart
