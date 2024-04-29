@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+# Installing nginx on my server
+
+apt-get -y update
+
+apt-get -y install nginx
+
+ufw allow 'Nginx HTTP'
+
+echo 'Hello World!' > index.html
+
+cp index.html /var/www/html
+
+service nginx restart
+
+# Add the redirection configuration to nginx.conf
+
+chown -R "$USER" /etc/nginx/sites-available/default
+
+cp /etc/nginx/sites-available/default /etc/nginx/sites-available/default.bak
+
+sed -i '24i\rewrite ^/redirect_me https://jw.org permanent;' /etc/nginx/sites-available/default
+
+echo "Ceci n'est pas une page" > error_404.html
+
+cp error_404.html /var/www/html
+
+sed -i '25i\	error_page 404 /error_404.html;' /etc/nginx/sites-available/default
+
+service nginx restart
+
+echo -e "\n	DONE!\n"
