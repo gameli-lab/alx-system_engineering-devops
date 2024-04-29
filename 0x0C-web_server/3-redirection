@@ -15,7 +15,7 @@ service nginx restart
 
 # Add the redirection configuration to nginx.conf
 
-chown -R $USER /etc/nginx/sites-available/default
+chown -R "$USER" /etc/nginx/sites-available/default
 
 cp /etc/nginx/sites-available/default /etc/nginx/sites-available/default.bak
 
