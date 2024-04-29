@@ -1,7 +1,24 @@
 #!/usr/bin/env bash
+# Installing nginx on my server
+
+apt-get -y update
+
+apt-get -y install nginx
+
+ufw allow 'Nginx HTTP'
+
+echo 'Hello World!' > index.html
+
+cp index.html /var/www/html
+
+service nginx restart
+
 # Add the redirection configuration to nginx.conf
 
-sed -i '/server {/a\'$'\n''#            \location /redirect_me {
-return 301 https://jw.org; }'$'\n' /etc/nginx/nginx.conf
+chown -R $USER /etc/nginx/sites-available/default
+
+cp /etc/nginx/sites-available/default /etc/nginx/sites-available/default.bak
+
+sed -i '24i\rewrite ^/redirect_me https://jw.org permanent;' /etc/nginx/sites-available/default
 
 service nginx restart
