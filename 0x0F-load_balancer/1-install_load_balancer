@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+# Installing HAProxy on a load balancer
+
+apt-get update
+
+apt-get install -y --no-install-recommends software-properties-common
+
+apt-get install -y haproxy=2.9.\*
+
+sed -i '$ a\
+
+frontend http_front
+	bind *:80
+	stats uri /haproxy?stats
+	default_backend http_back
+
+backend_http_back
+	balance roundrobin
+	server web-01 100.25.132.164:80 check
+	server web-02 54.208.249.91:80 check' /etc/haproxy/haproxy.cfg
+
+sed -i 's/#stats socket/stat socket/' /etc/haproxy/haproxy.cfg
+
+service haproxy start
+
+echo -e "\n	Completed\n"
