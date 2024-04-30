@@ -27,9 +27,7 @@ cp error_404.html /var/www/html/error_404.html
 
 sed -i '25i\	error_page 404 /error_404.html;' /etc/nginx/sites-available/default
 
-sed -i '26i\	add_header X-Served-By $hostname;' /etc/nginx/sites-available/default
-
-hash=$(echo ${hash})
+sed -i '26i\	add_header X-Served-By $HOSTNAME;' /etc/nginx/sites-available/default
 
 service nginx restart
 
