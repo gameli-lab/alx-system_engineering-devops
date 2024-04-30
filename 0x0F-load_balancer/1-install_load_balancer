@@ -14,13 +14,11 @@ frontend http_front
 	stats uri /haproxy?stats
 	default_backend http_back
 
-backend_http_back
+backend http_back
 	balance roundrobin
 	server web-01 100.25.132.164:80 check
 	server web-02 54.208.249.91:80 check
 ">> /etc/haproxy/haproxy.cfg
-
-printf %s "\nENABLED=1" >> /etc/haproxy/haproxy.cfg
 
 service haproxy restart
 
