@@ -34,7 +34,7 @@ defaults
 
 
 frontend http_front
-        bind *:433 ssl crt /etc/haproxy/cert.pem
+        bind *:443 ssl crt /etc/haproxy/cert.pem
         mode http
         option http-server-close
 
