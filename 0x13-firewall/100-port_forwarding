@@ -12,7 +12,7 @@
 # redirects traffic from tcp port 8080 to tcp port 80
 *nat
 :PREROUTING ACCEPT [0:0]
--A PREROUTING -p tcp --dport 8080 -j REDIRECT --to-port 80
+-A PREROUTING -p tcp --dport 8080 -j DNAT  --to-destination :80
 COMMIT
 
 
