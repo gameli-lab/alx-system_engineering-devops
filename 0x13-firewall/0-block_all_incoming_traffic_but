@@ -2,6 +2,8 @@ apt-get update
 
 apt-get install -y ufw
 
+ufw default allow outgoing
+
 ufw default deny incoming
 
 ufw allow 22
