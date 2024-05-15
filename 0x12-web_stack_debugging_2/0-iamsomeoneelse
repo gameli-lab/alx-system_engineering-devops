@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# whoami
+
+if [ $# -eq 0 ]; then
+	whoami
+	exit 1
+fi
+if getent passwd $1 > /dev/null; then
+	sudo -u $1 whoami
+	exit 1
+else
+	echo "username does not exist"
+	exit 1
+fi
