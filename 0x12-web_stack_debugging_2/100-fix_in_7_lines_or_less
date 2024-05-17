@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #making it simpler
 
-user = "$1"
+user="$1"
 
 sudo -u "$user" whoami
