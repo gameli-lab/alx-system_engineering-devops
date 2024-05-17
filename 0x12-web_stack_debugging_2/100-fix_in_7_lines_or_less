@@ -3,4 +3,4 @@
 
 user = "$1"
 
-sudo -u {user} whoami
+sudo -u "$user" whoami
