@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# whoami
+# whoami with user as argument
 
 if [ $# -eq 0 ]; then
 	whoami
