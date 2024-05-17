@@ -1,8 +1,6 @@
 #!/usr/bin/env bash
 #making it simpler
-if [ $# -eq 1 ]
-then
-    sudo -u $1 whoami
-    exit 1
-fi
-whoami
+
+user = "$1"
+
+sudo -u {user} whoami
