@@ -35,6 +35,8 @@ log-error       = /var/log/mysql/error.log
 #bind-address   = 127.0.0.1
 # Disabling symbolic-links is recommended to prevent assorted security risks
 symbolic-links=0
-# Replica configuration to begin replication
+
+# Replica database configuration
 server-id = 2
-relay_log = /var/log/mysql/mysql-relay-bin.log
+log-bin = /var/log/mysql/mysql-bin.log
+relay-log = /var/log/mysql/mysql-relay-bin.log
