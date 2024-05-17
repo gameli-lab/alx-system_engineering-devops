@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# whoami with user as argument
+
+
+sudo useradd -s /sbin/nologin -r -M nginx
+sudo groupadd -r nginx
+
+sudo sed -i 's/listen 80/default_server;
+		listen 8080;/g' /etc/nginx/nginx.conf
+
+sudo sed -i 's/server_name  localhost;/server_name _;/g' /etc/nginx/nginx.conf
