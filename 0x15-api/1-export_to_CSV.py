@@ -3,10 +3,11 @@
 This is the API module
 """
 
-from sys import argv
+import csv
 import json
 import requests
-import csv
+from sys import argv
+
 
 if __name__ == "__main__":
     url = "https://jsonplaceholder.typicode.com/"
@@ -14,8 +15,7 @@ if __name__ == "__main__":
     todos = requests.get(url + "todos", params={"userId": argv[1]}).json()
     with open("{}.csv".format(argv[1]), "w", newline="") as csvfile:
         writer = csv.writer(csvfile)
-        writer.writerow(["USER_ID", "USERNAME", "TASK_COMPLETED_STATUS",
-                         "TASK_TITLE"])
         for t in todos:
-            writer.writerow([argv[1], user.get("name"), t.get(
-                "completed"), t.get("title")])
+#            writer.writerow(['"{0}"'.format(argv[1]), '"{0}"'.format(user.get("name")), '"{0}"'.format(t.get("completed")), '"{0}"'.format(t.get("title"))])
+            writer.writerow(['"{0}","{1}","{2}","{3}"'.format(argv[1], user.get("name"), t.get("completed"), t.get("title"))])
+
