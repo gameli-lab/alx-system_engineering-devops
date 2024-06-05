@@ -1,22 +1,23 @@
-#!/usr/bin/python3
+!#/usr/bin/python3
 '''
 API request module
 '''
 
 import requests
 
-def number_of_subscribers(subreddit):
+def top_ten(subreddit):
     ''' Qeuries for the number of subscribers '''
-    url = "https://www.reddit.com/r/{}/about.json".format(subreddit)
+    url = "https://www.reddit.com/r/{}/hot.json?limit=10".format(subreddit)
     headers = {'User-Agent': 'Custom User Agent'}
     response = requests.get(url, headers=headers, allow_redirects=False)
 
     if response.status_code == 200:
         data = response.json()
-        subscribers = data['data']['subscribers']
-        return subscribers
+        posts = data['data']['children']
+        for post in posts:
+            print(post['data']['title'])
     else:
-        return 0
+        print('None')
 
 '''
 if __name__ == "__main__":
