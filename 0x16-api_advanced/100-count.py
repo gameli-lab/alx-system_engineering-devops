@@ -12,8 +12,8 @@ def count_words(subreddit, word_list):
 
     ''' Recursive case'''
     response = requests.get("https://www.reddit.com/r/{}/hot.json"
-                            .format(subreddit), headers={"User-agent"
-                                                         : "Mozilla/5.0"})
+                            .format(subreddit), headers={"User-agent":
+                                                         "Mozilla/5.0"})
 
     ''' Check for valid response'''
     if response.status_code != 200:

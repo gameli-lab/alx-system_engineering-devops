@@ -5,6 +5,7 @@ API request module
 
 import requests
 
+
 def top_ten(subreddit):
     ''' Qeuries for the number of subscribers '''
     url = "https://www.reddit.com/r/{}/hot.json?limit=10".format(subreddit)
@@ -18,8 +19,3 @@ def top_ten(subreddit):
             print(post['data']['title'])
     else:
         print('None')
-
-'''
-if __name__ == "__main__":
-    number_of_subscribers(subreddits)
-'''
