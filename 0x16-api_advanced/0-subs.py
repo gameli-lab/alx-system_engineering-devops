@@ -5,6 +5,7 @@ API request module
 
 import requests
 
+
 def number_of_subscribers(subreddit):
     ''' Qeuries for the number of subscribers '''
     url = "https://www.reddit.com/r/{}/about.json".format(subreddit)

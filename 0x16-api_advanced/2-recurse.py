@@ -1,4 +1,4 @@
-#1/usr/bin/python3
+#!/usr/bin/python3
 ''' Recursively querying for top tittles in a subreddit '''
 
 import requests
